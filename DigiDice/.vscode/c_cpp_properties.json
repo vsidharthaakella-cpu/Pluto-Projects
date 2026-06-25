@@ -1,0 +1,26 @@
+{
+  "configurations": [
+    {
+      "name": "PlutoIDE",
+      "compilerPath": "/Users/sidakella/.pluto-ide/tools/ARM GNU ToolChain/bin/arm-none-eabi-gcc.exe",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/Users/sidakella/.pluto-ide/tools/ARM GNU ToolChain/arm-none-eabi/include",
+        "/Users/sidakella/.pluto-ide/tools/ARM GNU ToolChain/lib/gcc/arm-none-eabi/14.2.1/include"
+      ],
+      "defines": [
+        "STM32F303xC",
+        "PRIMUS_V5"
+      ],
+      "cStandard": "c17",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "gcc-x64",
+      "mergeConfigurations": false,
+      "recursiveIncludes": {},
+      "browse": {
+        "limitSymbolsToIncludedHeaders": true
+      }
+    }
+  ],
+  "version": 4
+}

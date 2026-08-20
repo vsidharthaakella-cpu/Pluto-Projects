@@ -1,0 +1,25 @@
+# botsort_reid.yaml
+# Same as Ultralytics' default botsort.yaml, but with appearance-based
+# Re-ID switched on. This is what actually solves "is this the same
+# person" robustly — track_buffer is also raised so a person who's
+# briefly out of frame (drone yaw, occlusion) is still matched to their
+# old track instead of getting a new ID.
+
+tracker_type: botsort
+
+# Motion-matching (kept at Ultralytics defaults)
+track_high_thresh: 0.5
+track_low_thresh: 0.1
+new_track_thresh: 0.6
+track_buffer: 60          # raised from default 30 — tolerate longer occlusion/out-of-frame gaps
+match_thresh: 0.8
+fuse_score: true
+
+# Camera motion compensation — helps a lot on a moving drone
+gmc_method: sparseOptFlow
+
+# --- Re-ID (appearance embedding) ---
+proximity_thresh: 0.5
+appearance_thresh: 0.25   # lower = more lenient "same person" match; raise if IDs merge across people
+with_reid: true
+model: auto                # auto-downloads a small OSNet ReID model on first run
